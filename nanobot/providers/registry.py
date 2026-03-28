@@ -338,6 +338,20 @@ PROVIDERS: tuple[ProviderSpec, ...] = (
         backend="openai_compat",
         default_api_base="https://api.groq.com/openai/v1",
     ),
+    ProviderSpec(
+        name="sub2api",
+        keywords=("sub2api",),
+        env_key="SUB2API_API_KEY",
+        display_name="Sub2API",
+        backend="anthropic",
+        env_extras=(),
+        is_gateway=True,
+        detect_by_base_keyword="sub2api",
+        default_api_base="",
+        strip_model_prefix=True,
+        model_overrides=(),
+        supports_prompt_caching=True,
+    ),
 )
 
 
