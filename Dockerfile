@@ -42,9 +42,10 @@ RUN sed -i 's/\r$//' /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/ent
 
 USER nanobot
 ENV HOME=/home/nanobot
+ENV PATH="$HOME/.local/bin:$PATH"
 
 # Gateway default port
 EXPOSE 18790
 
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["status"]
+CMD ["gateway"]
