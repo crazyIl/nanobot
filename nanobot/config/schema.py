@@ -293,6 +293,7 @@ class ProvidersConfig(Base):
     opencode: ProviderConfig = Field(default_factory=ProviderConfig)  # OpenCode Zen (canonical provider id)
     opencode_zen: ProviderConfig = Field(default_factory=ProviderConfig)  # OpenCode Zen (curated coding models)
     opencode_go: ProviderConfig = Field(default_factory=ProviderConfig)  # OpenCode Go (low-cost coding models)
+    sub: ProviderConfig = Field(default_factory=ProviderConfig)
 
     @model_validator(mode="after")
     def convert_extra_providers(self):
